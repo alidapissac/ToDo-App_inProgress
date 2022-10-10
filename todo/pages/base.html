@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'style.css' %}">
+</head>
+<body id="base-body">
+    <div class="base-style" id="contentstyle">
+        <div class="position-absolute top-50% start-75"><a href="logout">Logout</a></div>
+    <h1 class="text-dark fw-bolder fst-italic text-center" id="h3style">To Do List</h1>
+    
+    <form id="formid">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <input type="text" id="plan" class="form-control" placeholder="What do you have planned...?" >
+            <button type="button" id="add" class="btn bg-success">Add task</button>
+        </div>
+    </form>
+        <h4 id="h3style">My to do tasks</h4>
+			<div id="todos">
+    <!-- Tasks will appear here-->
+    </div>
+    
+    <br>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</div>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+</body>
+</html>
